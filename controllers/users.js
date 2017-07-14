@@ -27,7 +27,7 @@ function create(req, res) {
   User.create(req.body, (err, user) => {
     const userData = user.toObject()
     delete userData.password
-    const token - serverAuth.createToken(userData)
+    const token = serverAuth.createToken(userData) 
 
     res.json({success: true, message: "User account created.", user, token})
   })

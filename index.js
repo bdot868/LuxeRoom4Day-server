@@ -4,6 +4,7 @@ const
   logger = require('morgan'),
   bodyParser = require('body-parser'),
   mongoose = require('mongoose'),
+  usersRoutes = require('./routes/users.js'),
   cors = require('cors'),
   request = require('request'),
   mongoUrl = process.env.MONGO_URL || 'mongodb://localhost/luxeroom4day',
@@ -28,6 +29,8 @@ const
     res.json({message: "Server root. All API routes start with a luxury room!"})
   })
 
+
+app.use('/api/users', usersRoutes)
 
 app.listen(port, (err) => {
   console.log(err || `Server running on ${port}`)

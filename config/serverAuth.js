@@ -4,7 +4,7 @@ const
 
 const serverAuth = {
   createToken: function(data) {
-    return jwt.sign(data, jwtSecret, {expiresIn: '1 day'})
+    return jwt.sign(data, jwtSecret, {expiresIn: '10 days'})
   },
 
   verifyToken: function(token) {
@@ -25,4 +25,4 @@ const serverAuth = {
   }
 }
 
-module.exports = serverAuth;
+module.exports = serverAuth
